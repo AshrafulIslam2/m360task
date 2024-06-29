@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { Layout, Menu } from "antd";
 import ProductList from "./features/products/ProductList";
+import ProductDetail from "./features/products/ProductDetail";
 
 const { Header, Content, Footer } = Layout;
 
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<h1>Welcome to the Home Page</h1>} />
             <Route path="/products" element={<ProductList />} />
+            <Route path="/products/:id" element={<ProductDetail />} />
           </Routes>
         </div>
       </Content>
