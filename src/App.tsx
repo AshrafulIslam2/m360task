@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { Layout, Menu } from "antd";
+import ProductList from "./features/products/ProductList";
 
 const { Header, Content, Footer } = Layout;
 
@@ -20,7 +21,10 @@ const App: React.FC = () => {
       </Header>
       <Content style={{ padding: "0 50px" }}>
         <div className="site-layout-content">
-          <Routes></Routes>
+          <Routes>
+            <Route path="/" element={<h1>Welcome to the Home Page</h1>} />
+            <Route path="/products" element={<ProductList />} />
+          </Routes>
         </div>
       </Content>
       <Footer style={{ textAlign: "center" }}>
