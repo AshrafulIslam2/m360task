@@ -28,26 +28,24 @@ const ProductDetail: React.FC = () => {
         <img
           src={data?.thumbnail}
           alt={data?.title}
-          className="w-full h-auto rounded-lg object-cover border"
+          className="w-full lg:w-[400px] lg:h-[400px] lg:m-4 h-auto rounded-lg object-cover border"
         />
         <div className="p-5">
           <h1 className="text-2xl font-bold mb-3">{data?.title}</h1>
-          <div
-            className="overflow-x-scroll max-h-64 lg:max-h-auto"
+          <Card
+            className="overflow-x-scroll md:overflow-hidden max-h-64 lg:max-h-auto"
             style={{ scrollbarWidth: "thin" }}
           >
-            <Descriptions column={1} bordered>
-              <Descriptions.Item
-                label="Description"
-                className="overflow-x-scroll"
-              >
-                {data?.description}
-              </Descriptions.Item>
-              <Descriptions.Item label="Price">
-                ${data?.price}
-              </Descriptions.Item>
-            </Descriptions>
-          </div>
+            <div className="flex  flex-col md:flex-row gap-4">
+              <div className="flex max-w-xl">
+                <div className="w-full  text-justify ">{data?.description}</div>
+              </div>
+              <div className="flex border  max-w-xs gap-3 rounded-md p-2 justify-between bg-teal-500 text-teal-950">
+                <div>Price:</div>
+                <div className="font-bold">${data?.price}</div>
+              </div>
+            </div>
+          </Card>
           <Button
             type="primary"
             onClick={() => navigate(`/products/${id}/edit`)}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Table, Button } from "antd";
+import { Table, Button, Spin } from "antd";
 
 import { Link } from "react-router-dom";
 import { useGetProductsQuery } from "../api/apiSlice";
@@ -61,9 +61,12 @@ const ProductList: React.FC = () => {
   return (
     <div style={{ padding: "20px" }}>
       {isLoading ? (
-        <div>Loading...</div>
+        <Spin
+          size="large"
+          className="flex justify-center items-center h-screen"
+        />
       ) : error ? (
-        <div>Error: {error.toString()}</div>
+        <div className="h-screen">Error: {error.toString()}</div>
       ) : (
         <Table
           columns={columns}

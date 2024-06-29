@@ -39,7 +39,12 @@ const ProductEdit: React.FC = () => {
   };
 
   if (productLoading || categoriesLoading) {
-    return <Spin />;
+    return (
+      <Spin
+        size="large"
+        className="flex justify-center items-center h-screen"
+      />
+    );
   }
 
   if (productError || categoriesError) {

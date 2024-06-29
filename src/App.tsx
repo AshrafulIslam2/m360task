@@ -24,7 +24,14 @@ const App: React.FC = () => {
       <Content style={{ padding: "0 50px" }}>
         <div className="site-layout-content">
           <Routes>
-            <Route path="/" element={<h1>Welcome to the Home Page</h1>} />
+            <Route
+              path="/"
+              element={
+                <h1 className="h-screen flex justify-center items-center  text-sm lg:text-4xl font-bold">
+                  Welcome to M360ICT
+                </h1>
+              }
+            />
             <Route path="/products" element={<ProductList />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/products/:id/edit" element={<ProductEdit />} />
